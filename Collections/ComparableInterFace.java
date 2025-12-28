@@ -23,7 +23,7 @@ class Employee implements Comparable
 		return name;
 	}
 
-	public int compareTo(Object o)
+	/*public int compareTo(Object o)
 	{
 		Employee e=(Employee)o;
 		if(this.id>e.id)
@@ -40,7 +40,27 @@ class Employee implements Comparable
 			return 0;
 		}
 		
+	}*/
+
+	public int compareTo(Object abc)
+	{
+		Employee v=(Employee)abc;
+		if(this.sal>v.sal)
+		{
+			return 1;
+		}
+		else if(this.sal<v.sal)
+		{
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+		
 	}
+	
+	
 
 	
 }
