@@ -11,11 +11,13 @@ public class RepeatElementUsingLinkedHashMap
 		for(int i=0; i<arr.length; i++)
 		{
 			Integer count=(Integer)map.get(arr[i]);
+			System.out.println(count);
 			if(count==null)
 			{
 				count=0;
 			}
 			++count;
+			System.out.println("count"+count);
 			map.put(arr[i],count);
 			
 		}
@@ -27,6 +29,7 @@ public class RepeatElementUsingLinkedHashMap
 				System.out.println("repeated Element is:"+e.getKey());
 			}
 		}
+		
 	
 	}
 }
