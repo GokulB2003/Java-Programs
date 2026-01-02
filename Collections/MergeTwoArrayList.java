@@ -23,7 +23,7 @@ public class MergeTwoArrayList
 		Collections.sort(arr);
 	
 		ArrayList<Integer>newArrayList=new ArrayList<>();
-		for(int i=0; i<arr.size(); i++)
+		/*for(int i=0; i<arr.size(); i++)
 		{
 			if(i>0 && arr.get(i)==arr.get(i-1))
 			{
@@ -45,6 +45,22 @@ public class MergeTwoArrayList
 				}
 			}
 			if(flag==true)
+			{
+				newArrayList.add(ans.get(i));
+			}
+		}
+		*/
+		for(int i=0; i<arr.size(); i++)
+		{
+			if(!newArrayList.contains(arr.get(i)))
+			{
+				newArrayList.add(arr.get(i));
+			}
+		}
+		
+		for(int i=0; i<ans.size(); i++)
+		{
+			if(!newArrayList.contains(ans.get(i)))
 			{
 				newArrayList.add(ans.get(i));
 			}
