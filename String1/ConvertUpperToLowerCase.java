@@ -15,6 +15,7 @@ public class ConvertUpperToLowerCase
 			else
 			newString+=" ";
 		}
+		System.out.println("After converting the string into the Lowercase the string becomes:"+newString);
 
 		*/
 		//oR
