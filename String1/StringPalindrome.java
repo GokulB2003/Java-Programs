@@ -34,7 +34,7 @@ public class StringPalindrome
 	public static void main(String args[])
 	{	
 		Solution s=new Solution();
-		String str="0p";
+		String str="";
 		boolean ans=s.isPalindrome(str);
 		String finalAns=ans?"Palindrome":"non-palindrome";
 		System.out.println(finalAns);
