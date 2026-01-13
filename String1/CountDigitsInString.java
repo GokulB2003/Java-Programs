@@ -22,5 +22,14 @@ public class CountDigitsInString
 		}
 		System.out.println("The Digits in the String is the :"+count);
 		
+
+		//OR
+		/*for (int i = 0; i < str.length(); i++) {
+    		char ch = str.charAt(i);
+    		if (ch >= '0' && ch <= '9') {
+        	count++;
+    		}
+		}
+		*/
 	}
 }
