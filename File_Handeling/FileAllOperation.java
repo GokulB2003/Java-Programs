@@ -17,8 +17,9 @@ public class FileAllOperation
 			System.out.println("File created Successfully:");
 			else
 			System.out.println("there is some problem:");
-			f.write("abc");
+			
 		}
 		//f.close();
 	}
+	
 }
