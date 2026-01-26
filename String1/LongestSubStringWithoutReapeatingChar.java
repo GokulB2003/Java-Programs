@@ -5,7 +5,7 @@ class Solution {
         int i=0;
         int maxl=0;
         LinkedHashSet<Character>ans=new LinkedHashSet<>();
-        for(int j=0; j<s.length(); j++)
+        /*/for(int j=0; j<s.length(); j++)
         {
                 if(!ans.contains(s.charAt(j)))
                 {
@@ -13,18 +13,32 @@ class Solution {
                 }
                 else
                 {
-			
                     while(ans.contains(s.charAt(i)))
-                    {
-			
+                    {	
                         ans.remove(s.charAt(i));
                         i++;
-			
                     }
 			ans.add(s.charAt(j));
                 }
 		  maxl=Math.max(ans.size(),maxl);
-        }
+        }*/
+		//Or without using the LinkedHashSet brute Force..
+
+
+		for(int k=0; k<s.length(); k++)
+		{
+			boolean arr[]=new boolean[256];
+			for(int j=k; j<s.length(); j++)
+			{
+				if(arr[s.charAt(j)])
+				{
+					break;
+				}
+				arr[s.charAt(j)]=true;
+				maxl=Math.max(maxl,j-k+1);
+			}
+		}
+	
         return maxl;
     }
 }
