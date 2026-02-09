@@ -4,6 +4,8 @@ class LinkedList
     public static class Node{
         int data;
         Node next;
+    
+      
         Node(int data)
         {
             this.data=data;
@@ -12,6 +14,7 @@ class LinkedList
     }
     public static Node head;
     public static Node tail;
+    static int size;
 
     public static void AddFirstNode(int data)
     {
@@ -20,9 +23,11 @@ class LinkedList
         {
             head=newNode;
             tail=newNode;
+            size++;
             return;
 
         }
+       size++;
         newNode.next=head;
         head=newNode;
 
@@ -34,6 +39,7 @@ class LinkedList
             if(head==null)
             {
                 head=tail=newNode;
+                size++;
                 return;
             }
             Node temp=head;
@@ -42,6 +48,12 @@ class LinkedList
                 temp=temp.next;
 
             }
+           /*  if(temp.next==null)
+            {
+                return;
+            }
+                */
+            size++;
             temp.next=newNode;
             tail=newNode;
             newNode.next=null;
@@ -52,10 +64,13 @@ class LinkedList
         if(head==null)
         {
                 AddFirstNode(data);
+                size++;
                 return;
         }
+       
         tail.next=newNode;
         tail=newNode;
+         size++;
 
     }
     public static void addNode(int n)
@@ -86,7 +101,71 @@ class LinkedList
         }
         newNode.next=temp.next;
         temp.next=newNode;
+        size++;
 
+    }
+    public static void removeLastNode()
+    {
+        Node temp=head;
+        if(temp.next==null)
+        {
+            tail=head=null;
+            size=0;
+            return;
+
+        }
+     
+        while(temp.next.next!=null)
+        {
+            temp=temp.next;
+        }
+        tail=temp;
+        size--;
+        temp.next=null;
+        
+
+    }
+    public static void removeNthNode(int index)
+    {
+        int i=1; 
+        Node temp=head;
+        if(size==0)
+        {
+            System.out.println("LinkedList is Empty:");
+            return;
+        }
+        if(index==1)
+        {
+            head=head.next;
+            size--;
+            return;
+        }
+        
+        while(i<index-1)
+        {
+
+            temp=temp.next;
+            i++;
+        }
+        size--;
+        //temp.next=null;
+        temp.next=temp.next.next;
+    }
+    public static int search(int target)
+    {
+        int i=0;
+        Node temp=head;
+        while(temp!=null)
+        {   
+            if(temp.data==target)
+            {
+                return i;
+            }
+
+            i++;
+            temp=temp.next;
+        }
+        return -1;
     }
     public static void display()
     {
@@ -97,6 +176,7 @@ class LinkedList
             temp=temp.next;
         }
         System.out.println();
+        System.out.println(size);
     }
     
 
@@ -115,10 +195,23 @@ public class LinkedListOp{
         System.out.println("How much node you want to be insert:");
         int n=sc.nextInt();
         ll.addNode(n);
+        ll.addLast(100);
+        ll.addLast(200);
+        ll.addLast(300);
+       // ll.removeNthNode(2);
+        System.out.println("Enter the value to search :");
+        int target=sc.nextInt();
+        int result=ll.search(target);
+        if(result!=-1)
+        {
+            System.out.println("data found at Index "+result);
 
-
+        }
+        else
+        {
+            System.out.println("Data not found:");
+        }
        ll.display();
 
-        
     }
 }
