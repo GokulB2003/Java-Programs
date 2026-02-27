@@ -5,7 +5,7 @@ class Solution {
         int i=0;
         int maxl=0;
         LinkedHashSet<Character>ans=new LinkedHashSet<>();
-        /*/for(int j=0; j<s.length(); j++)
+        /*for(int j=0; j<s.length(); j++)
         {
                 if(!ans.contains(s.charAt(j)))
                 {
@@ -22,6 +22,7 @@ class Solution {
                 }
 		  maxl=Math.max(ans.size(),maxl);
         }*/
+
 		//Or without using the LinkedHashSet brute Force..
 
 
