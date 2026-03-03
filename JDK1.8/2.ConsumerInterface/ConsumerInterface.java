@@ -4,12 +4,7 @@ public class ConsumerInterface
 {
 	public static void main(String args[])
 	{
-		
-		Consumer<Integer>ans=new Consumer<>()
-		{
-			public void accept(Integer data)->System.out.println(data);
-			
-		};
-		ans.accept(10);
+		Consumer<Integer>c=(Integer val)->System.out.println(val);
+		c.accept(10);
 	}
 }
