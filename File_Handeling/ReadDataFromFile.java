@@ -6,9 +6,9 @@ public class ReadDataFromFile
 	{
 		Scanner sc=new Scanner(System.in);
 		FileReader r=new FileReader("D:/GiriTechHub/File_Handeling/Demo1234/abc.txt");
-		int data;
+		//int data;
 
-		while((data=r.read())!=-1)
+		while((data[]=r.read())!=-1)
 		{
 			System.out.println((char)data);
 			Thread.sleep(1000);

@@ -1,6 +1,5 @@
 /*
 Remove duplicates from a sorted array using two pointers and return new length.
-
 */
 import java.util.*;
 public class RemoveDuplicatesArr

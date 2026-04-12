@@ -10,7 +10,7 @@ class Bank
 	}
 	 void withDraw(int money)
 	{
-		synchronized(this)
+		/*synchronized(this)
 		{
 		try
 		{
@@ -22,8 +22,35 @@ class Bank
 		{
 			System.out.println(ex);
 		}
+		}*/
+		
+		synchronized(this)
+		{
+			try
+		{
+			for(int i=0; i<10; i++)
+			{
+				if(i==5)
+				{
+					wait();
+				}
+				System.out.println(i);
+			}
+			
+			
 		}
+		catch(Exception ex)
+		{
+			System.out.println(ex);
+		}
+			
+		}
+		
 	}
+	synchronized void recall()
+			{
+				notify();
+			}
 	
 }
 class Deposite extends Thread
@@ -83,16 +110,20 @@ public class Account
 {
 	public static void main(String args[])
 	{
+		Scanner sc=new Scanner(System.in);
 		Bank b=new Bank();
 		
 		Deposite d=new Deposite(500);
 		d.set(b);
-		d.start();
+		
 
 		Withdraw w=new Withdraw(100);
+		w.setPriority(Thread.MAX_PRIORITY);
 		w.set(b);
+		d.start();
 		w.start();
-		
+		String str=sc.nextLine();
+		b.recall();
 		
 	}
 }

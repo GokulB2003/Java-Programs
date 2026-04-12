@@ -1,0 +1,38 @@
+Class Charger
+{
+	
+}
+class Vivo extends Charger
+{
+	public void charge()
+	{
+		System.out.println("vivo");
+	}
+}
+class Samsung extends Charger
+{
+	public void charge()
+	{
+		System.out.println("vivo");
+	}
+
+}
+Class Mobile
+{
+	void charge(Charger c)
+	{
+		c.charge();
+	}
+}
+public class LooseCoupling
+{
+	public static void main(String argsp[])
+	{
+		Charger c=new Charger();
+		Charger s=new Samsung();
+		Mobile m=new Mobile();
+		m.charge(s);
+
+	}
+}
+	
