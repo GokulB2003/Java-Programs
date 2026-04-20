@@ -1,12 +1,13 @@
 interface UsingAbstractClass
 {
+	int x=10;
 	void display();
 }
 abstract class AbsClass implements UsingAbstractClass
 {
 	public void display()
 	{
-		System.out.println("this is display");
+		System.out.println(x);
 	}
 } 
 public class InterfaceWithAbs
