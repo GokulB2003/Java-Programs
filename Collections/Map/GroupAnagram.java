@@ -31,13 +31,7 @@ public class GroupAnagram {
         Solution s = new Solution();
         String strs[] = { "eat", "tea", "tan", "ate", "nat", "bat" };
         List<List<String>> ans = new ArrayList<>();
-        // for(int i=0; i<strs.length; i++)
-        // {
-        // for(int j=i+1; j<strs.length; j++)
-        // {
-        // ans=
-        // }
-        // }
+   
         ans = s.groupAnagrams(strs);
         System.out.println(ans);
 
