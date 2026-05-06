@@ -21,7 +21,9 @@ public class RotateString
 		Scanner sc=new Scanner(System.in);
 		String str="abcde;
 		String goal="cdeab";
-		Boolean result=rotateString(str,goal);
+		Solution s=new Solution();
+
+		boolean result=s.rotateString(str,goal);
 		if(result)System.out.println("true");
 		else
 		{
